@@ -113,6 +113,7 @@ module Zip
                                                       else
                                                         buf.read(comment_length)
                                                       end
+      @zip_32_extensible                             = buf.slice(0, buf.bytesize)
       #raise Error, 'Zip consistency problem while reading eocd structure' unless buf.size == 0
     end
 
